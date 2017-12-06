@@ -1,0 +1,29 @@
+<h1>Actores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Biografía</th>
+      <th>Fotografía</th>
+      <th>Fecha de nacimiento</th>
+      <th>Lugar de nacimiento</th>
+      <th>Fecha de fallecimiento</th>
+      <th>Lugar de fallecimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @actors.each do |actor| %>
+      <tr>
+        <td><%= actor.name %></td>
+        <td><%= actor.bio %></td>
+        <td><img src="<%= actor.image_url %>" alt=""></td>
+        <td><%= actor.birth_date %></td>
+        <td><%= actor.birth_place %></td>
+        <td><%= actor.alive ? 'No ha fallecido' : actor.death_date %></td>
+        <td><%= actor.alive ? 'No ha fallecido' : actor.death_place %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
