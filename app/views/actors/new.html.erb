@@ -1,0 +1,44 @@
+<section style="width: 80%; margin: 10px auto 0;">
+  <h1>Crear un actor</h1>
+
+  <%= form_for @actor do |f| %>
+    <div>
+      <%= f.text_field :name, placeholder: "Nombre del actor" %>
+    </div>
+
+    <div>
+      <%= f.text_field :image_url, placeholder: "URL Imagen del actor" %>
+    </div>
+    
+    <div>
+      <%= label_tag(:birth_date, "Lugar de nacimiento") %>
+      <%= date_field(:actor, :birth_date) %>
+    </div>
+
+    <div>
+      <%= f.text_field :birth_place, placeholder: "Lugar de nacimiento" %>
+    </div>
+    
+    <div>
+      <%= f.text_area :bio, placeholder: "Biografía del actor" %>
+    </div>
+
+    <div>
+      <%= f.check_box :alive %>
+      <%= label_tag(:alive, "¿Esta vivo?") %>
+    </div>
+
+    <div>
+      <%= label_tag(:birth_date, "Lugar de fallecimiento") %>
+      <%= date_field(:actor, :death_date) %>
+    </div>
+
+    <div>
+      <%= f.text_field :death_place, placeholder: "Lugar de fallecimiento" %>
+    </div>
+
+    <div>
+      <%= f.submit "Publicar Producto" %>
+    </div>  
+  <% end %>
+</section>
